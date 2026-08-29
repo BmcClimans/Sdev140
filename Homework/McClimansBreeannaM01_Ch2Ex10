@@ -1,0 +1,23 @@
+"""
+A cookie recipe calls for the following ingredients:    
+1.5 cups of sugar  1 cup of butter  2.75 cups of flour
+The recipe produces 48 cookies with this amount of the ingredients. 
+Write a program that asks the user how many cookies he or she wants to make, 
+then displays the number of cups of each ingredient needed for the specified number of cookies.
+"""
+#Cookie recipe variables for a recipe of48 cookies 
+cookie_batch = 48
+sugar_cups = 1.5
+butter_cups = 1
+flour_cups = 2.75
+#Gather input from user for amount of cookies to make 
+input_cookies = int(input("How many cookies do you want to make? "))
+#Divide the user input amount by the cookie batch and multiply for each ingredient
+sugar_needed = float(input_cookies / cookie_batch) * sugar_cups
+butter_needed = float(input_cookies / cookie_batch) * butter_cups
+flour_needed = (input_cookies / cookie_batch) * flour_cups
+#Output the amount of each ingredient needed to make the specified amount of cookies
+print(f"To make {input_cookies} cookies, you will need: \n",
+      f"{sugar_needed:.2f} cups of sugar, \n",
+      f"{butter_needed:.2f} cups of butter, \n",
+      f"and {flour_needed:.2f} cups of flour.")
