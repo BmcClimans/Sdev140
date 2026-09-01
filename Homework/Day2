@@ -1,0 +1,11 @@
+"""
+Instructions:  Create a PYTHON program that prompts and receives two floating point numbers, multiplies them, and displays the result.
+"""
+#Gather user input to multiply two numbers together
+num1 = float(input("Please enter the first number: "))
+num2 = float(input("Please enter the second number: "))
+#Formula for multiplication
+total = num1 * num2
+#Add some extra flair and remove the floating point for ints 
+result = int(total) if total.is_float else total
+print(f"The total of the two numbers multiplied is {total:,.2f}.")
