@@ -1,7 +1,0 @@
-"""
-You have a group of friends coming to visit for your high school reunion, 
-and you want to take them out to eat at a local restaurant. 
-You aren’t sure if any of them have dietary restrictions, but your restaurant choices are as follows:
-Write a program that asks whether any members of your party are vegetarian, vegan, or gluten-free, 
-to which then displays only the restaurants to which you may take the group. 
-"""

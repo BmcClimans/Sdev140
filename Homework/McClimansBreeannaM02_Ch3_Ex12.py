@@ -37,5 +37,6 @@ total_after_discount:float = total_before_discount - discount_amount
 
 #Display the results
 print(f"Packages purchased: {packages_purchased}")
+print(f"Total cost before discount: ${total_before_discount:,.2f}")
 print(f"Discount: ${discount_amount:,.2f}")
 print(f"Total cost after discount: ${total_after_discount:,.2f}")

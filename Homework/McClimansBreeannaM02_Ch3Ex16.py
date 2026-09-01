@@ -14,12 +14,12 @@ elif answer == 'no':
     if answer == 'yes':
         print('Internet connection is working.')
     elif answer == 'no':
-        answer = input('Make sure the cables connecting the router are firmly plugged in and power is getting to the router. Did that fix the problem? (yes or no): ')
+        answer = input('Make sure the cables between the router & modem are plugged in firmly. Did that fix the problem? (yes or no): ')
         if answer == 'yes':
             print('Internet connection is working.')
         elif answer == 'no':
-            answer = input('Move the computer closer to the router and try to connect. Did that fix the problem? (yes or no): ')
+            answer = input('Move the router to a new location and try to connect. Did that fix the problem? (yes or no): ')
             if answer == 'yes':
                 print('Internet connection is working.')
             elif answer == 'no':
-                print('Contact your ISP.')
+                print('Get a new router.')
