@@ -17,20 +17,24 @@ Day Approximate Population
 10  21.209
 """
 
+#get user input for the starting num of organisms
 organism_input: str = input('Starting number of organisms: ')
 while organism_input.isdigit() == False or int(organism_input) <= 0:
     print('Please enter an integer greater than 0!')
     organism_input: str = input('Starting number of organisms: ')
 
-start_num_organims: int = int(organism_input)
+start_num_organisms: int = int(organism_input)
 
+#get user input for the average daily increase
 avg_daily_increase_input: str = input('Average daily increase as an integer representing a percentage (e.g. 30 for 30%): ')
 while avg_daily_increase_input.isdigit() == False or int(avg_daily_increase_input) < 1:
     print('Please enter an integer greater than 0!')
     avg_daily_increase_input: str = input('Enter  the average daily increase as an integer representing a percentage (e.g. 30 for 30%): ')
 
+#turning the average daily increase into a decimal to multiply by the starting number of organisms
 avg_daily_increase: float = 1 + int(avg_daily_increase_input) / 100
 
+#get user input for the number of days to multiply
 num_days_input: str = input('Enter the number of days to multiply: ')
 while num_days_input.isdigit() == False or int(num_days_input) <= 0:
     print('Please enter an integer greater than 0!')
