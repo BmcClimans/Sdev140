@@ -23,5 +23,5 @@ for day in range(1, num_days + 1):
     print(f"{day}\t${salary:,.2f}")
 
 # Display the total pay
-print("")
+print()
 print(f"Total Pay: ${total_pay:,.2f}")
