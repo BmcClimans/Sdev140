@@ -15,7 +15,6 @@ salary: float = 0.01
 
 # Display the table header
 print("Day\tSalary")
-print("-------------")
 
 # Calculate and display the salary for each day
 for day in range(1, num_days + 1):
@@ -24,5 +23,5 @@ for day in range(1, num_days + 1):
     print(f"{day}\t${salary:,.2f}")
 
 # Display the total pay
-print("-------------")
+print("")
 print(f"Total Pay: ${total_pay:,.2f}")
