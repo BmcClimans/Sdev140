@@ -34,11 +34,11 @@ def calculate_sales_tax(amount: float) -> tuple:
 
 def display_results(amount: float, state_sales_tax: float, county_sales_tax: float, total_sales_tax: float, total_cost: float) -> None:
     """Display the purchase amount and sales tax details."""
-    print(f"\nPurchase Amount: ${amount:.2f}")
-    print(f"State Sales Tax (5%): ${state_sales_tax:.2f}")
-    print(f"County Sales Tax (2.5%): ${county_sales_tax:.2f}")
-    print(f"Total Sales Tax: ${total_sales_tax:.2f}")
-    print(f"Total Cost: ${total_cost:.2f}")
+    print(f"\nPurchase Amount: ${amount:,.2f}")
+    print(f"State Sales Tax (5%): ${state_sales_tax:,.2f}")
+    print(f"County Sales Tax (2.5%): ${county_sales_tax:,.2f}")
+    print(f"Total Sales Tax: ${total_sales_tax:,.2f}")
+    print(f"Total Cost: ${total_cost:,.2f}")
 
 def main() -> None:
     """Main function to run the sales tax calculator."""
