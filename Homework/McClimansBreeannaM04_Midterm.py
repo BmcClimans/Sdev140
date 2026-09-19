@@ -22,10 +22,17 @@ def main():
 
     # Prompt the user for input until they enter a blank line or "done"
     while True:
-        word = input("Enter a word (or press Enter to finish, or type 'done'): ")
-        if word == "" or word.lower() == "done":
-            break
-        words.append(word)
+        try:
+            word = input("Enter a word (or press Enter to finish, or type 'done'): ")
+            if word == "" or word.lower() == "done":
+                break
+            #check thta input contains only letters
+            if not word.isalpha():
+                raise ValueError
+            #add words to the list
+            words.append(word)
+        except ValueError:
+            print("Invalid input. Please enter a word using letters only.")
 
     # Create the complete sentence
     if words:
