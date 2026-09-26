@@ -18,7 +18,7 @@ def main():
         for i in range(2,13,1):
             resultPct = result2Dice[i]/NumRoll  # calculate percent
             print(f'{i:3} - {result2Dice[i]:7}    {resultPct:^7.2%}   \
-                 {ExpectedProb[i]:^7.2%}')  # Pretty professional print
+                            {ExpectedProb[i]:^7.2%}')  # Pretty professional print
         another = input('Another run? (y)')
 # call main() module
 main()

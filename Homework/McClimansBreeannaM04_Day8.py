@@ -9,33 +9,61 @@ The result of the (ASCII) sort will group all like words together to enable a se
 and display of each word that occurs and how many times it shows up.
 """
 
+def get_words():
+    # Create an empty list
+    words = []
+
+    # Get words from the user
+    while True:
+        try:
+            word = input(
+                "Enter a word (or press Enter to finish, or type 'done'): "
+            ).strip()
+
+            # Stop if user presses Enter or types done
+            if word == "" or word.lower() == "done":
+                break
+
+            # Make sure the input contains only letters
+            if not word.isalpha():
+                raise ValueError
+
+            # Add valid word to the list
+            words.append(word)
+
+        except ValueError:
+            print("Invalid input. Please enter a word using letters only.")
+
+    return words
+
+
+def create_sentence(words):
+    # Join the words together with spaces
+    sentence = " ".join(words)
+
+    # Capitalize the first letter and add a period
+    sentence = sentence.capitalize() + "."
+
+    return sentence
+
+
+def display_results(words, sentence):
+    # Display the sentence and word count
+    print(sentence)
+    print(f"There are {len(words)} words in the sentence.")
+
+
 def main():
-    # Open the file and read its contents into a string variable
-    try:
-        with open('cleantext.txt', 'r') as file:
-            text = file.read()
-    except FileNotFoundError:
-        print("The file 'cleantext.txt' was not found.")
-    except IOError:  # noqa: UP024
-        print("An error occurred while reading the file.")
+    # Get the list of words
+    words = get_words()
 
-    # Split the string into a list of words based on blank space delimiter
-    word_list = text.split()
+    # Make sure at least one word was entered
+    if words:
+        sentence = create_sentence(words)
+        display_results(words, sentence)
+    else:
+        print("No words were entered.")
 
-    # Sort the list of words
-    word_list.sort()
-
-    # Create a dictionary to count occurrences of each word
-    word_count = {}
-    for word in word_list:
-        if word in word_count:
-            word_count[word] += 1
-        else:
-            word_count[word] = 1
-
-    # Display the results
-    for word, count in word_count.items():
-        print(f"{word}: {count}")
 
 if __name__ == "__main__":
     main()

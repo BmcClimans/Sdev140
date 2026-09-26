@@ -16,25 +16,61 @@ The cat ran home quickly.
 There are 5 words in the sentence.
 """
 
-def main():
-    # Initialize an empty list to store the words
+def get_words():
+    # Create an empty list
     words = []
 
-    # Prompt the user for input until they enter a blank line or "done"
+    # Get words from the user
     while True:
-        word = input("Enter a word (or press Enter to finish, or type 'done'): ")
-        if word == "" or word.lower() == "done":
-            break
-        words.append(word)
+        try:
+            word = input(
+                "Enter a word (or press Enter to finish, or type 'done'): "
+            ).strip()
 
-    # Create the complete sentence
+            # Stop if user presses Enter or types done
+            if word == "" or word.lower() == "done":
+                break
+
+            # Make sure the input contains only letters
+            if not word.isalpha():
+                raise ValueError
+
+            # Add valid word to the list
+            words.append(word)
+
+        except ValueError:
+            print("Invalid input. Please enter a word using letters only.")
+
+    return words
+
+
+def create_sentence(words):
+    # Join the words together with spaces
+    sentence = " ".join(words)
+
+    # Capitalize the first letter and add a period
+    sentence = sentence.capitalize() + "."
+
+    return sentence
+
+
+def display_results(words, sentence):
+    # Display the sentence and word count
+    print(sentence)
+    print(f"There are {len(words)} words in the sentence.")
+
+
+def main():
+    # Get the list of words
+    words = get_words()
+
+    # Make sure at least one word was entered
     if words:
-        sentence = " ".join(words)
-        sentence = sentence.capitalize() + "."
-        print(sentence)
-        print(f"There are {len(words)} words in the sentence.")
+        sentence = create_sentence(words)
+        display_results(words, sentence)
     else:
         print("No words were entered.")
 
+
 if __name__ == "__main__":
-    main() 
+    main()
