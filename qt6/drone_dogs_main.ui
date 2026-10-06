@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+.\<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
@@ -269,17 +269,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <tabstops>
-  <tabstop>SpinBoxBeefDogs</tabstop>
-  <tabstop>SpinBoxPorkDogs</tabstop>
-  <tabstop>SpinBoxTurkeyDogs</tabstop>
-  <tabstop>PushButtonCalcOrder</tabstop>
-  <tabstop>PushButtonSubmitOrder</tabstop>
-  <tabstop>PushButtonExit</tabstop>
-  <tabstop>LineEditSubtotal</tabstop>
-  <tabstop>LineEditSalesTax</tabstop>
-  <tabstop>LineEditTotalCost</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>
