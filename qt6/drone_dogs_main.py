@@ -28,7 +28,7 @@ class MyMainWindow(QMainWindow):
         self.exit_button.clicked.connect(self.on_exit_button_clicked)
 
     def on_calc_button_clicked(self):
-        #get the number of hot dogs from the spin boxes
+        #get the number of hot dogs from the spin boxes, using the value() method to retrieve the integer value
         num_beef_dogs = self.ui.SpinBoxBeefDogs.value()
         num_pork_dogs = self.ui.SpinBoxPorkDogs.value()
         num_turkey_dogs = self.ui.SpinBoxTurkeyDogs.value()
@@ -52,6 +52,17 @@ class MyMainWindow(QMainWindow):
         self.ui.LineEditTotalCost.setText(f"${total_cost:.2f}")
 
     def on_submit_order_button_clicked(self):
+        #validate that at least one hot dog has been ordered before submitting the order
+        num_beef_dogs = self.ui.SpinBoxBeefDogs.value()
+        num_pork_dogs = self.ui.SpinBoxPorkDogs.value()
+        num_turkey_dogs = self.ui.SpinBoxTurkeyDogs.value()
+
+        total_hot_dogs = num_beef_dogs + num_pork_dogs + num_turkey_dogs
+
+        if total_hot_dogs == 0:
+            QMessageBox.warning(self, "Input Error", "Please order at least one hot dog before submitting.")
+            return
+        
         QMessageBox.information(self, "Order Submitted", "Thank you for ordering your meal from DroneDogs!")
 
     def on_exit_button_clicked(self):
