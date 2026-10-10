@@ -1,11 +1,12 @@
 import sys
+from pathlib import Path
 
 from PySide6.QtWidgets import (
     QApplication,
     QMainWindow,
     QMessageBox,
 )
-
+from PySide6.QtGui import QPixmap
 from drone_dogs_main_ui import Ui_MainWindow
 
 
@@ -17,6 +18,19 @@ class MyMainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        # Get the folder containing this Python file
+        BASE_DIR = Path(__file__).resolve().parent
+
+        # Load DroneDogs logo
+        self.ui.LabelLogo.setPixmap(
+            QPixmap(str(BASE_DIR / "DroneDogsLogo.png"))
+        )
+
+        # Load DroneDogs title image
+        self.ui.LabelTitle.setPixmap(
+            QPixmap(str(BASE_DIR / "dronedogs_order_form_title_text.png"))
+        )
 
         #button setup
         self.calc_button = self.ui.PushButtonCalcOrder
