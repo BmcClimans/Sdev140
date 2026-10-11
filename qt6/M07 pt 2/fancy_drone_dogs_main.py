@@ -17,6 +17,7 @@ class MyMainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         # Get the folder containing this Python file
+        #using these because the images kept not showing up and i nneed a fix for that
         BASE_DIR = Path(__file__).resolve().parent
 
         # Load DroneDogs logo
